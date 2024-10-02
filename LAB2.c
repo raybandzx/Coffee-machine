@@ -17,3 +17,26 @@
 #define esp_price 3.5
 #define capp_price 4.5
 #define mocha_price 5.5
+
+int order = 0;
+int choice = 0;
+int milk,chocolate,water;
+float price;
+
+int main()
+{
+printf("Coffee Maker Menu\n");
+printf("1. Order coffee\n");
+printf("2. Admin mode\n");
+printf("3. Exit\n");
+printf("Enter your choice:");
+scanf("%d", &choice);
+
+while(choice !=1, choice !=2, choice !=3) {
+
+    printf("Invalid input. Try again.\n");
+    printf("Enter your choice from 1-3:");
+    }
+
+}
+
