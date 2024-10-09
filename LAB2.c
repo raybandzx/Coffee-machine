@@ -18,9 +18,17 @@
 #define capp_price 4.5
 #define mocha_price 5.5
 
+#define coffee_menu
+
+#define available_beans 400
+#define available_water 400
+#define available_milk 400
+#define available_chocolate 120
+
 int order = 0;
 int choice = 0;
 int milk,chocolate,water;
+int admin password = admin_password;
 float price;
 
 int main()
@@ -39,4 +47,57 @@ while(choice !=1, choice !=2, choice !=3) {
     }
 
 }
+
+
+int coffee_menu()
+while (choice == 1) {
+    printf("Choose your order:");   
+    printf("1. Espresso AED 3.5\n");
+    printf("2. Cappucino AED 4.5\n");
+    printf("3. Mocha AED 5.5\n");
+    printf("4. Exit");
+    scanf("%d", &order);
+
+ switch (coffee_menu) {
+  case 1:
+    if(available_beans >= esp_beans && available_milk >= esp_milk && available_water >= esp_water)
+    printf("You have ordered an espresso. Your total is %.2f",esp_price);
+    else 
+    printf("Unavailable due to temporarily insufficient ingredients");
+    break;
+  case 2:
+    if(available_beans >= capp_beans && available_milk >= capp_milk && available_water >= capp_water)
+    printf("You have ordered a Cappucino. Your total is %.2f",capp_price);
+    else
+    printf("Unavailable due to temporarily insufficient ingredients");
+    break;
+  case 3:
+    if(available_beans >= mocha_beans && available_milk >= mocha_milk && available_water >= mocha_water && available_chocolate >= mocha_chocolate)
+    printf("You have ordered a Mocha. Your total is %.2f",mocha_price);
+    else 
+    printf("Unavailable due to temporarily insufficient ingredients");
+    break;    
+ }
+}
+
+int admin_mode()
+while (choice == 2) {
+    printf("Enter password:");
+    scanf("%s", &password);
+    if(strcmp(admin_password, password) == 0){
+        int x;
+        printf("1. Display the quantity of each ingredient in the machine and the total sale amount");
+        scanf("%d", &x);
+        printf("2. Replenish ingredients in the machine");
+        replenish(x);  
+        printf("3. Change the coffee price");
+        change_price(x);
+        printf("4. Exit the Admin mode");
+    }
+    else{
+        printf("Invalid password")
+        break;}
+    
+}
+
 
