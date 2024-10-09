@@ -27,6 +27,7 @@
 
 int order = 0;
 int choice = 0;
+int confirm = 0;
 int milk,chocolate,water;
 int admin password = admin_password;
 float price;
@@ -78,6 +79,10 @@ while (choice == 1) {
     printf("Unavailable due to temporarily insufficient ingredients");
     break;    
  }
+ printf("Confirm your selection. Enter 0 for no and 1 for yes");
+ scanf("%d", &confirm);
+ if(confirm == 1)
+    continue;
 }
 
 int admin_mode()
@@ -99,5 +104,3 @@ while (choice == 2) {
         break;}
     
 }
-
-
